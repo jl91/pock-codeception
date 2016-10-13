@@ -10,6 +10,6 @@ class PingAction
 {
     public function __invoke(ServerRequestInterface $request, ResponseInterface $response, callable $next = null)
     {
-        return new JsonResponse(['ack' => time()]);
+        return new JsonResponse(['ack' => 'a']);
     }
 }

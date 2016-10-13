@@ -1,0 +1,4 @@
+class_name: GherkinTester
+modules:
+    enabled:
+        - \Helper\Gherkin
