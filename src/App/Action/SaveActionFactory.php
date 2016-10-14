@@ -2,22 +2,24 @@
 
 namespace App\Action;
 
-use Doctrine\ORM\EntityManager;
+use Domain\Service\BooksService;
 use Interop\Container\ContainerInterface;
 use Zend\Expressive\Router\RouterInterface;
 use Zend\Expressive\Template\TemplateRendererInterface;
 
-class HomePageFactory
+class SaveActionFactory
 {
     public function __invoke(ContainerInterface $container)
     {
         $router   = $container->get(RouterInterface::class);
+
+        $service = $container->get(BooksService::class);
+
         $template = ($container->has(TemplateRendererInterface::class))
             ? $container->get(TemplateRendererInterface::class)
             : null;
 
-        $em = $container->get(EntityManager::class);
 
-        return new HomePageAction($router, $template, $em);
+        return new SaveAction($router, $service, $template);
     }
 }

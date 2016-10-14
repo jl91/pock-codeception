@@ -2,6 +2,8 @@
 use Zend\Expressive\Application;
 use Zend\Expressive\Container\ApplicationFactory;
 use Zend\Expressive\Helper;
+use Domain\Service;
+use Domain\Factory;
 
 return [
     // Provides application-wide services.
@@ -19,6 +21,7 @@ return [
         'factories' => [
             Application::class => ApplicationFactory::class,
             Helper\UrlHelper::class => Helper\UrlHelperFactory::class,
+            Service\BooksService::class => Factory\BookServiceFactory::class
         ],
     ],
 ];

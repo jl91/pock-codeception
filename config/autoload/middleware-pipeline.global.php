@@ -7,6 +7,7 @@ return [
         'factories' => [
             Helper\ServerUrlMiddleware::class => Helper\ServerUrlMiddlewareFactory::class,
             Helper\UrlHelperMiddleware::class => Helper\UrlHelperMiddlewareFactory::class,
+            Doctrine\ORM\EntityManager::class => App\Container\DoctrineFactory::class
         ],
     ],
     // This can be used to seed pre- and/or post-routing middleware

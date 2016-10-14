@@ -8,6 +8,7 @@ return [
         ],
         'factories' => [
             App\Action\HomePageAction::class => App\Action\HomePageFactory::class,
+            App\Action\SaveAction::class => App\Action\SaveActionFactory::class
         ],
     ],
 
@@ -17,6 +18,12 @@ return [
             'path' => '/',
             'middleware' => App\Action\HomePageAction::class,
             'allowed_methods' => ['GET'],
+        ],
+        [
+            'name' => 'save',
+            'path' => '/save',
+            'middleware' => App\Action\SaveAction::class,
+            'allowed_methods' => ['POST'],
         ],
         [
             'name' => 'api.ping',
